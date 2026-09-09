@@ -4,6 +4,7 @@ import { BUSES, SEED_PARCELS, INITIAL_BUS_PROGRESS, routeById, busById } from ".
 import { TRIP_ANIMATION_SECONDS, TRIP_ANIMATION_CAP, missedSurcharge } from "./lib/route";
 import SenderView from "./components/SenderView";
 import ConductorView from "./components/ConductorView";
+import { DemoBanner, DemoModal } from "./components/DemoPromo";
 
 const ROLES = [
   { id: "sender", label: "Sender" },
@@ -14,6 +15,9 @@ export default function App() {
   const [role, setRole] = useState("sender");
   const [parcels, setParcels] = useState(SEED_PARCELS);
   const [busProgress, setBusProgress] = useState(() => ({ ...INITIAL_BUS_PROGRESS }));
+
+  const [showDemoBanner, setShowDemoBanner] = useState(true);
+  const [showDemoModal, setShowDemoModal] = useState(false);
 
   const [conductorBusId, setConductorBusId] = useState(BUSES[0].id);
   const [conductorStopIndex, setConductorStopIndex] = useState(0);
@@ -182,6 +186,11 @@ export default function App() {
           </div>
         </div>
       </header>
+
+      {showDemoBanner && (
+        <DemoBanner onWatch={() => setShowDemoModal(true)} onDismiss={() => setShowDemoBanner(false)} />
+      )}
+      {showDemoModal && <DemoModal onClose={() => setShowDemoModal(false)} />}
 
       <main className="max-w-5xl mx-auto p-4 sm:p-6 pb-10">
         <div className="max-w-xl mx-auto lg:max-w-2xl">
