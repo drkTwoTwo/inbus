@@ -4,6 +4,12 @@ A peer-to-peer parcel delivery prototype built on existing intercity bus routes 
 
 Sending a parcel between hill towns normally takes 3+ days by courier. Buses already run those routes daily with empty luggage space. In **inbus**, a sender meets the conductor in person at a bus stop, the parcel rides the bus, and the receiver meets the conductor at another stop to collect it — same day, no courier, no shop in the loop.
 
+## Demo
+
+<video src="https://raw.githubusercontent.com/drkTwoTwo/inbus/main/docs/demo.webm" controls muted playsinline width="100%"></video>
+
+Booking a parcel between two stops, tracking it live, and the conductor collecting/releasing it — end to end, on the real app. If the player above doesn't load, [watch the clip directly](./docs/demo.webm).
+
 ## How it works
 
 - **Book**: pick any two bus stops on a route (not just town endpoints — any intermediate stop too), see the buses running that route with price and duration, choose one, pay now or pay at pickup.
